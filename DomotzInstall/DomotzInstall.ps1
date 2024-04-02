@@ -7,7 +7,7 @@ $AgentName = "agentnamehere"
 
 $AgentUrl = "https://portal.domotz.com/download/agent_packages/domotz-windows-x64-10.exe"
 
-$WindowsAgentInstallerFile = "$PSScriptRoot\domotz-windows-x64-10.exe"
+$WindowsAgentInstallerFile = "c:\temp\domotz-windows-x64-10.exe"
 $WindowsAgentInstallerDir = $PSScriptRoot
 $StatusUrl = "http://127.0.0.1:3000/api/v1/status"
 $ActivationUrl = "http://127.0.0.1:3000/api/v1/agent"
