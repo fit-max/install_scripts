@@ -30,6 +30,7 @@ else {
 
 # Download Domotz Agent Installer
 Write-Host "Downloading agent from $AgentUrl"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $wc = New-Object System.Net.WebClient
 $wc.DownloadFile($AgentUrl, $WindowsAgentInstallerFile)
 
