@@ -28,11 +28,18 @@ else {
     Write-Host "Code is running as administrator - nice to hear that!" -ForegroundColor Green
 }
 
-# Download Domotz Agent Installer
-Write-Host "Downloading agent from $AgentUrl"
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$wc = New-Object System.Net.WebClient
-$wc.DownloadFile($AgentUrl, $WindowsAgentInstallerFile)
+$fileExists = Test-Path -Path $WindowsAgentInstallerFile
+
+if ($fileExists) {
+    Write-Host "The file exists."
+} 
+else {
+    # Download Domotz Agent Installer
+    Write-Host "Downloading agent from $AgentUrl"
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    $wc = New-Object System.Net.WebClient
+    $wc.DownloadFile($AgentUrl, $WindowsAgentInstallerFile)
+}
 
 # Installing the Domotz Agent
 Write-Host "Executiing installer $WindowsAgentInstallerFile working dir=$WindowsAgentInstallerDir"
