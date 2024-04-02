@@ -1,9 +1,7 @@
 # Domotz Agent -- Powershell script (this is just an example you can customize it the way you want)
 
 # Please edit the following lines 
-$ActivationKey = "apikeyhere"
 $ApiEndpoint = "https://api-us-east-1-cell-1.domotz.com/public-api/v1/"
-$AgentName = "agentnamehere"
 
 $AgentUrl = "https://portal.domotz.com/download/agent_packages/domotz-windows-x64-10.exe"
 
